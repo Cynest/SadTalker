@@ -102,11 +102,11 @@ class Preprocesser:
                max(pad[3] - img.size[1] + border, 0))
         # if enable_padding and max(pad) > border - 4:
         #     pad = np.maximum(pad, int(np.rint(qsize * 0.3)))
-        #     img = np.pad(np.float32(img), ((pad[1], pad[3]), (pad[0], pad[2]), (0, 0)), 'reflect')
+        #     img = np.pad(float(img), ((pad[1], pad[3]), (pad[0], pad[2]), (0, 0)), 'reflect')
         #     h, w, _ = img.shape
         #     y, x, _ = np.ogrid[:h, :w, :1]
-        #     mask = np.maximum(1.0 - np.minimum(np.float32(x) / pad[0], np.float32(w - 1 - x) / pad[2]),
-        #                       1.0 - np.minimum(np.float32(y) / pad[1], np.float32(h - 1 - y) / pad[3]))
+        #     mask = np.maximum(1.0 - np.minimum(float(x) / pad[0], float(w - 1 - x) / pad[2]),
+        #                       1.0 - np.minimum(float(y) / pad[1], float(h - 1 - y) / pad[3]))
         #     blur = qsize * 0.02
         #     img += (scipy.ndimage.gaussian_filter(img, [blur, blur, 0]) - img) * np.clip(mask * 3.0 + 1.0, 0.0, 1.0)
         #     img += (np.median(img, axis=(0, 1)) - img) * np.clip(mask, 0.0, 1.0)

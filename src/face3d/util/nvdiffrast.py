@@ -27,7 +27,7 @@ from pytorch3d.renderer import (
 #     return np.array([[n/x,    0,            0,              0],
 #                      [  0, n/-x,            0,              0],
 #                      [  0,    0, -(f+n)/(f-n), -(2*f*n)/(f-n)],
-#                      [  0,    0,           -1,              0]]).astype(np.float32)
+#                      [  0,    0,           -1,              0]]).astype(float)
 
 class MeshRenderer(nn.Module):
     def __init__(self,

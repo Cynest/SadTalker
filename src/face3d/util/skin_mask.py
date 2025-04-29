@@ -120,6 +120,6 @@ def get_skin_mask(img_path):
         name = names[i]
         print('%05d' % (i), ' ', name)
         full_image_name = os.path.join(img_path, name)
-        img = cv2.imread(full_image_name).astype(np.float32)
+        img = cv2.imread(full_image_name).astype(float)
         skin_img = skinmask(img)
         cv2.imwrite(os.path.join(save_path, name), skin_img.astype(np.uint8))

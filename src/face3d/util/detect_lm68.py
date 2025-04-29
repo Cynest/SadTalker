@@ -15,7 +15,7 @@ def save_label(labels, save_path):
 def draw_landmarks(img, landmark, save_name):
     landmark = landmark
     lm_img = np.zeros([img.shape[0], img.shape[1], 3])
-    lm_img[:] = img.astype(np.float32)
+    lm_img[:] = img.astype(float)
     landmark = np.round(landmark).astype(np.int32)
 
     for i in range(len(landmark)):
@@ -89,7 +89,7 @@ def detect_68p(img_path,sess,input_op,output_op):
 
         # detect landmarks
         input_img = np.reshape(
-            input_img, [1, 224, 224, 3]).astype(np.float32)
+            input_img, [1, 224, 224, 3]).astype(float)
         landmark = sess.run(
             output_op, feed_dict={input_op: input_img})
 

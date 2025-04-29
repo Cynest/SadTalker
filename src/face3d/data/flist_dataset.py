@@ -34,7 +34,7 @@ def jason_flist_reader(flist):
     return info
 
 def parse_label(label):
-    return torch.tensor(np.array(label).astype(np.float32))
+    return torch.tensor(np.array(label).astype(float))
 
 
 class FlistDataset(BaseDataset):
@@ -83,7 +83,7 @@ class FlistDataset(BaseDataset):
 
         raw_img = Image.open(img_path).convert('RGB')
         raw_msk = Image.open(msk_path).convert('RGB')
-        raw_lm = np.loadtxt(lm_path).astype(np.float32)
+        raw_lm = np.loadtxt(lm_path).astype(float)
 
         _, img, lm, msk = align_img(raw_img, raw_lm, self.lm3d_std, raw_msk)
         

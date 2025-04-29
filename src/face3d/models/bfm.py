@@ -14,7 +14,7 @@ def perspective_projection(focal, center):
         focal, 0, center,
         0, focal, center,
         0, 0, 1
-    ]).reshape([3, 3]).astype(np.float32).transpose()
+    ]).reshape([3, 3]).astype(float).transpose()
 
 class SH:
     def __init__(self):
@@ -41,15 +41,15 @@ class ParametricFaceModel:
             
         model = loadmat(os.path.join(bfm_folder, default_name))
         # mean face shape. [3*N,1]
-        self.mean_shape = model['meanshape'].astype(np.float32)
+        self.mean_shape = model['meanshape'].astype(float)
         # identity basis. [3*N,80]
-        self.id_base = model['idBase'].astype(np.float32)
+        self.id_base = model['idBase'].astype(float)
         # expression basis. [3*N,64]
-        self.exp_base = model['exBase'].astype(np.float32)
+        self.exp_base = model['exBase'].astype(float)
         # mean face texture. [3*N,1] (0-255)
-        self.mean_tex = model['meantex'].astype(np.float32)
+        self.mean_tex = model['meantex'].astype(float)
         # texture basis. [3*N,80]
-        self.tex_base = model['texBase'].astype(np.float32)
+        self.tex_base = model['texBase'].astype(float)
         # face indices for each vertex that lies in. starts from 0. [N,8]
         self.point_buf = model['point_buf'].astype(np.int64) - 1
         # vertex indices for each face. starts from 0. [F,3]
@@ -74,7 +74,7 @@ class ParametricFaceModel:
         self.device = 'cpu'
         self.camera_distance = camera_distance
         self.SH = SH()
-        self.init_lit = init_lit.reshape([1, 1, -1]).astype(np.float32)
+        self.init_lit = init_lit.reshape([1, 1, -1]).astype(float)
         
 
     def to(self, device):

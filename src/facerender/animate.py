@@ -190,7 +190,7 @@ class AnimateFromCoeff():
         video = []
         for idx in range(predictions_video.shape[0]):
             image = predictions_video[idx]
-            image = np.transpose(image.data.cpu().numpy(), [1, 2, 0]).astype(np.float32)
+            image = np.transpose(image.data.cpu().numpy(), [1, 2, 0]).astype(float)
             video.append(image)
         result = img_as_ubyte(video)
 

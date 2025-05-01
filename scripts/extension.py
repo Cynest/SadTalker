@@ -113,7 +113,7 @@ def install():
         "pydub":"pydub==0.25.1",
         "scipy":"scipy==1.11.0",
         "tqdm": "tqdm",
-        "yacs":"yacs==0.1.9",
+        "yacs":"yacs==0.1.8",
         "yaml": "pyyaml", 
         "av":"av",
         "gfpgan": "gfpgan",

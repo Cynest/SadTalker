@@ -10,7 +10,7 @@ pydub==0.25.1
 scipy==1.11.0
 kornia==0.7.0
 tqdm
-yacs==0.1.9
+yacs==0.1.8
 pyyaml
 joblib==1.2.0
 scikit-image==0.21.0

@@ -107,13 +107,13 @@ def install():
 
     kv = {
         "face_alignment": "face-alignment==1.3.5",
-        "imageio": "imageio==2.19.3",
-        "imageio_ffmpeg": "imageio-ffmpeg==0.4.7",
-        "librosa":"librosa==0.8.0",
+        "imageio": "imageio==2.26.0",
+        "imageio_ffmpeg": "imageio-ffmpeg==0.4.8",
+        "librosa":"librosa==0.10.0",
         "pydub":"pydub==0.25.1",
-        "scipy":"scipy==1.8.1",
+        "scipy":"scipy==1.11.0",
         "tqdm": "tqdm",
-        "yacs":"yacs==0.1.8",
+        "yacs":"yacs==0.1.9",
         "yaml": "pyyaml", 
         "av":"av",
         "gfpgan": "gfpgan",
